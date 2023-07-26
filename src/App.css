@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+.nav{
+    height: 60px;
+    background-color: #20232a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+    font-size: 40px;
+    color: #61dafb;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.body{
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.item{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.item-title{
+    font-size: 1.2rem;
+    color: #61dafb;
+    width: 15%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-details{
+    color: #ffe564;
+    width: 40%;
+    text-align: center;
+}
+.status{
+    font-size: 1.1rem;
+    background-color: lightgreen;
+    color: #20232a;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+.edit{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+.edit .item-title{
+    width: fit-content;
+}
+.but{
+    background-color: #ffe564;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #20232a;
+    padding: 5px;
+    cursor: pointer;
+}
+.del-but{
+    background-color: #ed3315;
+}
+.form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 10px 0px;
+}
+.form-input{
+    background-color: transparent;
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    color: #61dafb;
+    font-size: 1.2rem;
+}
+.form-title{
+    width: 20%;
+}
+.form-description{
+    width: 50%;
+}
+.form-but{
+    width: 10%;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    background-color: aquamarine;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.notask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bold;
+    height: 100%;
+    color: aqua;
 }
