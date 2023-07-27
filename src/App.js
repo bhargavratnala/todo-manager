@@ -1,12 +1,25 @@
 import './App.css';
 import Item from './Item';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function App(){
 
     let [formData, changeFormDate] = useState({title:"", description : "", status:false});
-
+    
     let [data, chageData] =useState([]);
+
+    useEffect(()=>{
+        let arrdata;
+        arrdata = localStorage.getItem("data");
+        console.log(arrdata);
+        if(arrdata == null || arrdata === ''){
+            arrdata = [];
+        }
+        else{
+            arrdata = JSON.parse(arrdata);
+        }
+        chageData(arrdata);
+    }, []);
 
     function deleteTask(ind){
         chageData(prev => {
@@ -16,6 +29,7 @@ export default function App(){
                 continue;
                 update.push(prev[i]);
             }
+            localStorage.setItem("data", JSON.stringify(data));
             return update;
         })
     }
@@ -32,6 +46,7 @@ export default function App(){
                     update.push(prev[i]);
                 }
             }
+            localStorage.setItem("data", JSON.stringify(data));
             return update;
         })
     }
@@ -49,6 +64,7 @@ export default function App(){
             let update = [...prev];
             update.push(formData);
             changeFormDate({title:"", description : "", status:false});
+            localStorage.setItem("data", JSON.stringify(data));
             return update;
         });
     }
