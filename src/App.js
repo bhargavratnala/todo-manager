@@ -60,7 +60,7 @@ export default function App(){
     }
 
     function addData(){
-        if(data.title === '' || data.description === ''){
+        if(formData.title === ""  || formData.description === ""){
             return;
         }
         chageData(prev => {
