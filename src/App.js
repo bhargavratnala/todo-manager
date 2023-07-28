@@ -29,7 +29,7 @@ export default function App(){
                 continue;
                 update.push(prev[i]);
             }
-            localStorage.setItem("data", JSON.stringify(data));
+            localStorage.setItem("data", JSON.stringify(update));
             return update;
         })
     }
@@ -46,7 +46,7 @@ export default function App(){
                     update.push(prev[i]);
                 }
             }
-            localStorage.setItem("data", JSON.stringify(data));
+            localStorage.setItem("data", JSON.stringify(update));
             return update;
         })
     }
@@ -60,11 +60,14 @@ export default function App(){
     }
 
     function addData(){
+        if(data.title === '' || data.description === ''){
+            return;
+        }
         chageData(prev => {
             let update = [...prev];
             update.push(formData);
             changeFormDate({title:"", description : "", status:false});
-            localStorage.setItem("data", JSON.stringify(data));
+            localStorage.setItem("data", JSON.stringify(update));
             return update;
         });
     }
